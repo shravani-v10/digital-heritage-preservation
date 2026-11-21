@@ -1,0 +1,616 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>Heritage Map | Digital Heritage Preservation</title>
+
+
+    <!-- Google Fonts -->
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+
+    <link
+        rel="preconnect"
+        href="https://fonts.gstatic.com"
+        crossorigin
+    >
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Playfair+Display:wght@400;500;600&display=swap"
+        rel="stylesheet"
+    >
+
+
+    <!-- Leaflet CSS -->
+
+    <link
+        rel="stylesheet"
+        href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+    >
+
+
+    <!-- Main CSS -->
+
+    <link
+        rel="stylesheet"
+        href="css/style.css"
+    >
+
+</head>
+
+
+<body>
+
+
+    <!-- =================================
+         NAVBAR
+    ================================= -->
+
+    <header class="navbar">
+
+        <nav class="nav-links">
+
+            <a href="index.html">
+                Home
+            </a>
+
+            <a href="about.html">
+                About
+            </a>
+
+            <a href="heritage.html">
+                Heritage
+            </a>
+
+            <a
+                href="map.html"
+                class="active"
+            >
+                Map
+            </a>
+
+        </nav>
+
+    </header>
+
+
+
+    <!-- =================================
+         MAP PAGE
+    ================================= -->
+
+    <main class="map-page">
+
+
+        <!-- =================================
+             INTRO
+        ================================= -->
+
+        <section class="map-intro">
+
+            <div class="map-intro-label">
+
+                <span>
+                    04
+                </span>
+
+                <p>
+                    HERITAGE MAP
+                </p>
+
+            </div>
+
+
+            <div class="map-heading">
+
+                <h1>
+                    Explore the places
+                    <br>
+                    <span>we visited.</span>
+                </h1>
+
+
+                <p>
+                    Discover the heritage locations documented
+                    during our field visits across Mumbai
+                    and Kolhapur.
+                </p>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =================================
+             MAP
+        ================================= -->
+
+        <section class="map-wrapper">
+
+
+            <div
+                id="heritage-map"
+                class="heritage-map"
+            ></div>
+
+
+
+            <!-- MAP LABEL -->
+
+            <div class="map-floating-label">
+
+                <span>
+                    EXPLORE LOCATIONS
+                </span>
+
+                <div></div>
+
+                <p>
+                    07 PLACES
+                </p>
+
+            </div>
+
+
+
+            <!-- =================================
+                 PLACE CARDS
+            ================================= -->
+
+            <div class="place-cards">
+
+                <!-- CARD 01 -->
+
+                <article
+                    class="place-card"
+                    data-location="Gateway of India"
+                >
+
+                    <div class="place-card-image">
+
+                        <img
+                            src="images/hero/img1-GatewayofINDIA.jpeg"
+                            alt="Gateway of India"
+                        >
+
+                        <span class="place-card-number">
+                            01
+                        </span>
+
+                    </div>
+
+
+                    <div class="place-card-content">
+
+                        <p class="place-card-city">
+                            MUMBAI
+                        </p>
+
+                        <h2>
+                            Gateway of India
+                        </h2>
+
+
+                        <div class="place-card-buttons">
+
+                            <button
+                                class="explore-button"
+                                data-location="Gateway of India"
+                            >
+                                Explore
+                            </button>
+
+
+                            <a
+                                href="#"
+                                class="direction-button"
+                                data-direction="Gateway of India"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                            >
+                                View Direction
+                                <span>↗</span>
+                            </a>
+
+                        </div>
+
+                    </div>
+
+                </article>
+
+
+
+                <!-- CARD 02 -->
+
+                <article
+                    class="place-card"
+                    data-location="Rajabai Clock Tower"
+                >
+
+                    <div class="place-card-image">
+
+                        <img
+                            src="images/hero/img2-Rajabaiclocktower.jpeg"
+                            alt="Rajabai Clock Tower"
+                        >
+
+                        <span class="place-card-number">
+                            02
+                        </span>
+
+                    </div>
+
+
+                    <div class="place-card-content">
+
+                        <p class="place-card-city">
+                            MUMBAI
+                        </p>
+
+                        <h2>
+                            Rajabai Clock Tower
+                        </h2>
+
+
+                        <div class="place-card-buttons">
+
+                            <button
+                                class="explore-button"
+                                data-location="Rajabai Clock Tower"
+                            >
+                                Explore
+                            </button>
+
+
+                            <a
+                                href="#"
+                                class="direction-button"
+                                data-direction="Rajabai Clock Tower"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                            >
+                                View Direction
+                                <span>↗</span>
+                            </a>
+
+                        </div>
+
+                    </div>
+
+                </article>
+
+
+
+                <!-- CARD 03 -->
+
+                <article
+                    class="place-card"
+                    data-location="CSMT Railway Station"
+                >
+
+                    <div class="place-card-image">
+
+                        <img
+                            src="images/hero/img3-CSMT.jpeg"
+                            alt="CSMT Railway Station"
+                        >
+
+                        <span class="place-card-number">
+                            03
+                        </span>
+
+                    </div>
+
+
+                    <div class="place-card-content">
+
+                        <p class="place-card-city">
+                            MUMBAI
+                        </p>
+
+                        <h2>
+                            CSMT Railway Station
+                        </h2>
+
+
+                        <div class="place-card-buttons">
+
+                            <button
+                                class="explore-button"
+                                data-location="CSMT Railway Station"
+                            >
+                                Explore
+                            </button>
+
+
+                            <a
+                                href="#"
+                                class="direction-button"
+                                data-direction="CSMT Railway Station"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                            >
+                                View Direction
+                                <span>↗</span>
+                            </a>
+
+                        </div>
+
+                    </div>
+
+                </article>
+
+
+
+                <!-- CARD 04 -->
+
+                <article
+                    class="place-card"
+                    data-location="CSMVS Museum"
+                >
+
+                    <div class="place-card-image">
+
+                        <img
+                            src="images/hero/img4-CSMVS.jpeg"
+                            alt="CSMVS Museum"
+                        >
+
+                        <span class="place-card-number">
+                            04
+                        </span>
+
+                    </div>
+
+
+                    <div class="place-card-content">
+
+                        <p class="place-card-city">
+                            MUMBAI
+                        </p>
+
+                        <h2>
+                            CSMVS Museum
+                        </h2>
+
+
+                        <div class="place-card-buttons">
+
+                            <button
+                                class="explore-button"
+                                data-location="CSMVS Museum"
+                            >
+                                Explore
+                            </button>
+
+
+                            <a
+                                href="#"
+                                class="direction-button"
+                                data-direction="CSMVS Museum"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                            >
+                                View Direction
+                                <span>↗</span>
+                            </a>
+
+                        </div>
+
+                    </div>
+
+                </article>
+
+
+
+                <!-- CARD 05 -->
+
+                <article
+                    class="place-card"
+                    data-location="Panhala Fort"
+                >
+
+                    <div class="place-card-image">
+
+                        <img
+                            src="images/hero/img5-panhala-fort.jpeg"
+                            alt="Panhala Fort"
+                        >
+
+                        <span class="place-card-number">
+                            05
+                        </span>
+
+                    </div>
+
+
+                    <div class="place-card-content">
+
+                        <p class="place-card-city">
+                            KOLHAPUR
+                        </p>
+
+                        <h2>
+                            Panhala Fort
+                        </h2>
+
+
+                        <div class="place-card-buttons">
+
+                            <button
+                                class="explore-button"
+                                data-location="Panhala Fort"
+                            >
+                                Explore
+                            </button>
+
+
+                            <a
+                                href="#"
+                                class="direction-button"
+                                data-direction="Panhala Fort"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                            >
+                                View Direction
+                                <span>↗</span>
+                            </a>
+
+                        </div>
+
+                    </div>
+
+                </article>
+
+
+
+                <!-- CARD 06 -->
+
+                <article
+                    class="place-card"
+                    data-location="Bhavani Mandap"
+                >
+
+                    <div class="place-card-image place-card-placeholder">
+
+                        <span class="place-card-number">
+                            06
+                        </span>
+
+                    </div>
+
+
+                    <div class="place-card-content">
+
+                        <p class="place-card-city">
+                            KOLHAPUR
+                        </p>
+
+                        <h2>
+                            Bhavani Mandap
+                        </h2>
+
+
+                        <div class="place-card-buttons">
+
+                            <button
+                                class="explore-button"
+                                data-location="Bhavani Mandap"
+                            >
+                                Explore
+                            </button>
+
+
+                            <a
+                                href="#"
+                                class="direction-button"
+                                data-direction="Bhavani Mandap"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                            >
+                                View Direction
+                                <span>↗</span>
+                            </a>
+
+                        </div>
+
+                    </div>
+
+                </article>
+
+
+
+                <!-- CARD 07 -->
+
+                <article
+                    class="place-card"
+                    data-location="Shalini Palace"
+                >
+
+                    <div class="place-card-image">
+
+                        <img
+                            src="images/hero/img6-shalinipalace.jpeg"
+                            alt="Shalini Palace"
+                        >
+
+                        <span class="place-card-number">
+                            07
+                        </span>
+
+                    </div>
+
+
+                    <div class="place-card-content">
+
+                        <p class="place-card-city">
+                            KOLHAPUR
+                        </p>
+
+                        <h2>
+                            Shalini Palace
+                        </h2>
+
+
+                        <div class="place-card-buttons">
+
+                            <button
+                                class="explore-button"
+                                data-location="Shalini Palace"
+                            >
+                                Explore
+                            </button>
+
+
+                            <a
+                                href="#"
+                                class="direction-button"
+                                data-direction="Shalini Palace"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                            >
+                                View Direction
+                                <span>↗</span>
+                            </a>
+
+                        </div>
+
+                    </div>
+
+                </article>
+
+            </div>
+
+        </section>
+
+
+    </main>
+
+
+
+    <!-- =================================
+         LEAFLET JS
+    ================================= -->
+
+    <script
+        src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+    ></script>
+
+
+    <!-- MAP JS -->
+
+    <script src="js/map.js"></script>
+
+
+</body>
+
+</html>

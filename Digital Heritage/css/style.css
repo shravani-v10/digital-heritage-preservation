@@ -1,0 +1,4921 @@
+/* =================================
+   DIGITAL HERITAGE PRESERVATION
+   MAIN STYLESHEET
+================================= */
+
+
+/* =================================
+   ROOT VARIABLES
+================================= */
+
+:root {
+
+    --bg-color: #F5F0E9;
+
+    --text-color: #112250;
+
+    --muted-text: #3C507D;
+
+    --accent-color: #E0C58F;
+
+    --card-color: #D9CBC2;
+
+    --royal-blue: #112250;
+
+    --sapphire: #3C507D;
+
+    --swan-wing: #F5F0E9;
+
+    --shell-stone: #D9CBC2;
+
+    --quick-sand: #E0C58F;
+}
+
+
+/* =================================
+   RESET
+================================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+html {
+    scroll-behavior: smooth;
+}
+
+
+body {
+
+    min-height: 100vh;
+
+    font-family: "Inter", sans-serif;
+
+    background-color: var(--bg-color);
+
+    color: var(--text-color);
+}
+
+
+img {
+
+    display: block;
+
+    max-width: 100%;
+}
+
+
+a {
+
+    text-decoration: none;
+
+    color: inherit;
+}
+
+
+button,
+input,
+textarea {
+
+    font-family: inherit;
+}
+
+
+/* =================================
+   NAVBAR
+================================= */
+
+.navbar {
+
+    position: absolute;
+
+    top: 0;
+
+    left: 0;
+
+    width: 100%;
+
+    padding: 28px 5vw;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: flex-end;
+
+    z-index: 20;
+}
+
+
+.nav-links {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 34px;
+}
+
+
+.nav-links a {
+
+    position: relative;
+
+    color: var(--text-color);
+
+    font-size: 12px;
+
+    font-weight: 500;
+
+    letter-spacing: 1.5px;
+
+    transition:
+        color 0.3s ease,
+        opacity 0.3s ease;
+}
+
+
+.nav-links a:hover {
+
+    color: var(--sapphire);
+}
+
+
+.nav-links a.active {
+
+    color: var(--royal-blue);
+}
+
+
+.nav-links a::after {
+
+    content: "";
+
+    position: absolute;
+
+    left: 0;
+
+    bottom: -7px;
+
+    width: 0;
+
+    height: 1px;
+
+    background-color: var(--accent-color);
+
+    transition: width 0.3s ease;
+}
+
+
+.nav-links a:hover::after,
+.nav-links a.active::after {
+
+    width: 100%;
+}
+
+
+/* =================================
+   HOME NAVBAR
+================================= */
+
+.home-navbar {
+
+    color: #F3EFE7;
+}
+
+
+.home-navbar .nav-links a {
+
+    color: rgba(243, 239, 231, 0.9);
+}
+
+
+.home-navbar .nav-links a:hover,
+.home-navbar .nav-links a.active {
+
+    color: #F3EFE7;
+}
+
+
+/* =================================
+   HOME HERO
+================================= */
+
+.hero {
+
+    position: relative;
+
+    width: 100%;
+
+    height: 100vh;
+
+    min-height: 650px;
+
+    overflow: hidden;
+
+    background-color: #0D0D0C;
+
+    color: #F3EFE7;
+}
+
+
+/* =================================
+   HERO SLIDER
+================================= */
+
+.hero-slider {
+
+    position: absolute;
+
+    inset: 0;
+
+    width: 100%;
+
+    height: 100%;
+
+    overflow: hidden;
+}
+
+
+.hero-slide {
+
+    position: absolute;
+
+    inset: 0;
+
+    width: 100%;
+
+    height: 100%;
+
+    transform: translateX(100%);
+
+    transition:
+        transform 1.8s cubic-bezier(0.77, 0, 0.18, 1);
+
+    pointer-events: none;
+}
+
+
+.hero-slide.active {
+
+    transform: translateX(0);
+}
+
+
+.hero-slide img {
+
+    width: 100%;
+
+    height: 100%;
+
+    object-fit: cover;
+}
+
+
+/* =================================
+   HERO OVERLAY
+================================= */
+
+.hero-overlay {
+
+    position: absolute;
+
+    inset: 0;
+
+    background:
+        linear-gradient(
+            90deg,
+            rgba(13, 13, 12, 0.58) 0%,
+            rgba(13, 13, 12, 0.38) 30%,
+            rgba(13, 13, 12, 0.20) 55%,
+            rgba(13, 13, 12, 0.08) 78%,
+            rgba(13, 13, 12, 0) 100%
+        );
+
+    z-index: 1;
+
+    pointer-events: none;
+}
+
+
+/* =================================
+   HERO CONTENT
+================================= */
+
+.hero-content {
+
+    position: relative;
+
+    z-index: 2;
+
+    width: min(620px, 90%);
+
+    margin-left: 10vw;
+
+    padding-top: 35px;
+
+    top: 50%;
+
+    transform: translateY(-50%);
+}
+
+
+.hero-label {
+
+    margin-bottom: 18px;
+
+    color: #B89B63;
+
+    font-size: 11px;
+
+    letter-spacing: 3px;
+
+    font-weight: 500;
+}
+
+
+.hero-title {
+
+    margin-bottom: 18px;
+
+    color: #F3EFE7;
+
+    font-family: "Playfair Display", serif;
+
+    font-size: clamp(42px, 5vw, 72px);
+
+    line-height: 0.98;
+
+    letter-spacing: -1.5px;
+
+    font-weight: 500;
+}
+
+
+.hero-title span {
+
+    color: #B89B63;
+}
+
+
+.hero-place {
+
+    margin-bottom: 12px;
+
+    color: #F3EFE7;
+
+    font-family: "Playfair Display", serif;
+
+    font-size: 24px;
+
+    font-weight: 500;
+}
+
+
+.hero-description {
+
+    max-width: 470px;
+
+    margin-bottom: 30px;
+
+    color: rgba(243, 239, 231, 0.82);
+
+    font-size: 14px;
+
+    line-height: 1.8;
+}
+
+
+/* =================================
+   HERO BUTTON
+================================= */
+
+.hero-button {
+
+    display: inline-flex;
+
+    align-items: center;
+
+    gap: 18px;
+
+    padding: 13px 19px;
+
+    border:
+        1px solid
+        rgba(224, 197, 143, 0.7);
+
+    color: #F3EFE7;
+
+    font-size: 10px;
+
+    letter-spacing: 1.8px;
+
+    transition:
+        background-color 0.3s ease,
+        color 0.3s ease,
+        transform 0.3s ease;
+}
+
+
+.hero-button span {
+
+    font-size: 17px;
+
+    line-height: 1;
+}
+
+
+.hero-button:hover {
+
+    background-color: #E0C58F;
+
+    color: #112250;
+
+    transform: translateY(-2px);
+}
+
+
+/* =================================
+   HERO LOCATION
+================================= */
+
+.hero-location {
+
+    position: absolute;
+
+    right: 5vw;
+
+    bottom: 38px;
+
+    z-index: 3;
+
+    color: rgba(243, 239, 231, 0.8);
+
+    font-size: 10px;
+
+    letter-spacing: 2px;
+}
+
+
+/* =================================
+   HERO SCROLL INDICATOR
+================================= */
+
+.scroll-indicator {
+
+    position: absolute;
+
+    left: 10vw;
+
+    bottom: 35px;
+
+    z-index: 3;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 14px;
+
+    color: rgba(243, 239, 231, 0.7);
+
+    font-size: 9px;
+
+    letter-spacing: 2px;
+}
+
+
+.scroll-line {
+
+    width: 55px;
+
+    height: 1px;
+
+    background-color:
+        rgba(243, 239, 231, 0.55);
+}
+
+
+/* =================================
+   HOME HERITAGE SECTION
+================================= */
+
+.home-heritage {
+
+    padding: 120px 8vw 110px;
+
+    background-color: var(--bg-color);
+
+    color: var(--royal-blue);
+}
+
+
+/* =================================
+   SECTION HEADER
+================================= */
+
+.home-section-header {
+
+    max-width: 850px;
+
+    margin-bottom: 65px;
+}
+
+
+.home-section-label {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 14px;
+
+    margin-bottom: 28px;
+}
+
+
+.home-section-label span {
+
+    color: var(--quick-sand);
+
+    font-size: 10px;
+
+    letter-spacing: 2px;
+
+    font-weight: 600;
+}
+
+
+.home-section-label p {
+
+    color: var(--sapphire);
+
+    font-size: 10px;
+
+    letter-spacing: 2.5px;
+
+    font-weight: 600;
+}
+
+
+.home-section-header h2 {
+
+    margin-bottom: 22px;
+
+    font-family: "Playfair Display", serif;
+
+    color: var(--royal-blue);
+
+    font-size: clamp(42px, 5vw, 68px);
+
+    line-height: 1;
+
+    font-weight: 500;
+
+    letter-spacing: -1.5px;
+}
+
+
+.home-section-header h2 span {
+
+    color: var(--sapphire);
+}
+
+
+.home-section-header > p {
+
+    max-width: 520px;
+
+    color: var(--muted-text);
+
+    font-size: 13px;
+
+    line-height: 1.8;
+}
+
+
+/* =================================
+   HERITAGE GRID
+================================= */
+
+.home-heritage-grid {
+
+    display: grid;
+
+    grid-template-columns: repeat(3, 1fr);
+
+    gap: 22px;
+}
+
+
+/* =================================
+   HERITAGE CARD
+================================= */
+
+.heritage-card {
+
+    display: block;
+
+    overflow: hidden;
+
+    background-color: var(--shell-stone);
+
+    transition:
+        transform 0.35s ease,
+        box-shadow 0.35s ease;
+}
+
+
+.heritage-card:hover {
+
+    transform: translateY(-7px);
+
+    box-shadow:
+        0 20px 50px
+        rgba(17, 34, 80, 0.14);
+}
+
+
+/* =================================
+   CARD IMAGE
+================================= */
+
+.heritage-card-image {
+
+    position: relative;
+
+    height: 270px;
+
+    overflow: hidden;
+}
+
+
+.heritage-card-image img {
+
+    width: 100%;
+
+    height: 100%;
+
+    object-fit: cover;
+
+    transition:
+        transform 0.7s ease;
+}
+
+
+.heritage-card:hover
+.heritage-card-image img {
+
+    transform: scale(1.05);
+}
+
+
+/* =================================
+   CARD NUMBER
+================================= */
+
+.heritage-card-number {
+
+    position: absolute;
+
+    top: 15px;
+
+    left: 15px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    width: 30px;
+
+    height: 30px;
+
+    background-color:
+        rgba(245, 240, 233, 0.94);
+
+    color: var(--royal-blue);
+
+    font-size: 9px;
+
+    letter-spacing: 1px;
+
+    font-weight: 600;
+}
+
+
+/* =================================
+   CARD CONTENT
+================================= */
+
+.heritage-card-content {
+
+    padding: 24px 24px 25px;
+}
+
+
+.heritage-card-content > span {
+
+    display: block;
+
+    margin-bottom: 9px;
+
+    color: var(--sapphire);
+
+    font-size: 8px;
+
+    letter-spacing: 2px;
+
+    font-weight: 600;
+}
+
+
+.heritage-card-content h3 {
+
+    margin-bottom: 12px;
+
+    color: var(--royal-blue);
+
+    font-family: "Playfair Display", serif;
+
+    font-size: 27px;
+
+    line-height: 1.1;
+
+    font-weight: 500;
+}
+
+
+.heritage-card-content p {
+
+    min-height: 42px;
+
+    margin-bottom: 22px;
+
+    color: var(--muted-text);
+
+    font-size: 12px;
+
+    line-height: 1.7;
+}
+
+
+/* =================================
+   CARD LINK
+================================= */
+
+.heritage-card-link {
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    padding-top: 15px;
+
+    border-top:
+        1px solid
+        rgba(17, 34, 80, 0.12);
+
+    color: var(--royal-blue);
+
+    font-size: 9px;
+
+    letter-spacing: 1.8px;
+
+    font-weight: 600;
+}
+
+
+.heritage-card-link span {
+
+    font-size: 17px;
+
+    transition:
+        transform 0.3s ease;
+}
+
+
+.heritage-card:hover
+.heritage-card-link span {
+
+    transform: translateX(5px);
+}
+
+
+/* =================================
+   VIEW ALL
+================================= */
+
+.home-heritage-footer {
+
+    display: flex;
+
+    justify-content: flex-end;
+
+    margin-top: 45px;
+}
+
+
+.home-heritage-footer a {
+
+    display: inline-flex;
+
+    align-items: center;
+
+    gap: 15px;
+
+    padding-bottom: 8px;
+
+    border-bottom:
+        1px solid
+        var(--royal-blue);
+
+    color: var(--royal-blue);
+
+    font-size: 9px;
+
+    letter-spacing: 1.8px;
+
+    transition:
+        gap 0.3s ease;
+}
+
+
+.home-heritage-footer a:hover {
+
+    gap: 22px;
+}
+
+
+/* =================================
+   TABLET
+================================= */
+
+@media (max-width: 900px) {
+
+    .home-heritage {
+
+        padding:
+            90px 6vw;
+    }
+
+
+    .home-heritage-grid {
+
+        grid-template-columns:
+            repeat(2, 1fr);
+    }
+
+
+    .heritage-card-image {
+
+        height: 240px;
+    }
+
+}
+
+
+/* =================================
+   MOBILE
+================================= */
+
+@media (max-width: 600px) {
+
+    .navbar {
+
+        padding:
+            22px 6vw;
+    }
+
+
+    .nav-links {
+
+        gap: 18px;
+    }
+
+
+    .nav-links a {
+
+        font-size: 10px;
+
+        letter-spacing: 1px;
+    }
+
+
+    .hero {
+
+        min-height: 600px;
+    }
+
+
+    .hero-content {
+
+        width: 85%;
+
+        margin-left: 7vw;
+    }
+
+
+    .hero-title {
+
+        font-size:
+            clamp(40px, 12vw, 58px);
+    }
+
+
+    .hero-place {
+
+        font-size: 20px;
+    }
+
+
+    .hero-description {
+
+        font-size: 12px;
+
+        max-width: 380px;
+    }
+
+
+    .hero-location {
+
+        right: 6vw;
+
+        bottom: 25px;
+
+        font-size: 8px;
+    }
+
+
+    .scroll-indicator {
+
+        left: 7vw;
+
+        bottom: 25px;
+
+        font-size: 7px;
+    }
+
+
+    .scroll-line {
+
+        width: 35px;
+    }
+
+
+    .home-heritage {
+
+        padding:
+            75px 6vw 80px;
+    }
+
+
+    .home-section-header {
+
+        margin-bottom: 45px;
+    }
+
+
+    .home-section-header h2 {
+
+        font-size:
+            clamp(38px, 11vw, 55px);
+    }
+
+
+    .home-section-header > p {
+
+        font-size: 12px;
+    }
+
+
+    .home-heritage-grid {
+
+        grid-template-columns: 1fr;
+
+        gap: 18px;
+    }
+
+
+    .heritage-card-image {
+
+        height: 260px;
+    }
+
+
+    .heritage-card-content h3 {
+
+        font-size: 25px;
+    }
+
+
+    .home-heritage-footer {
+
+        justify-content: flex-start;
+
+        margin-top: 35px;
+    }
+
+}
+
+/* =================================
+   ABOUT PAGE
+================================= */
+
+.about-page {
+    min-height: 100vh;
+
+    background-color: var(--bg-color);
+
+    color: var(--text-color);
+}
+
+/* =================================
+   ABOUT PAGE NAVBAR
+================================= */
+
+.about-page .navbar {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 100;
+    width: 100%;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    padding: 22px 5vw;
+
+    color: #F5F0E9;
+}
+
+.about-page .nav-logo {
+    color: #F5F0E9;
+    text-decoration: none;
+
+    font-size: 15px;
+    font-weight: 600;
+    letter-spacing: 1px;
+
+    white-space: nowrap;
+}
+
+.about-page .nav-links {
+    display: flex;
+    align-items: center;
+    gap: 38px;
+}
+
+.about-page .nav-links a {
+    position: relative;
+
+    color: rgba(245, 240, 233, 0.85);
+
+    text-decoration: none;
+
+    font-size: 12px;
+    font-weight: 500;
+    letter-spacing: 1px;
+
+    transition: color 0.3s ease;
+}
+
+.about-page .nav-links a:hover,
+.about-page .nav-links a.active {
+    color: #F5F0E9;
+}
+
+.about-page .nav-links a.active::after {
+    content: "";
+
+    position: absolute;
+
+    left: 0;
+    bottom: -10px;
+
+    width: 100%;
+    height: 1px;
+
+    background: #E0C58F;
+}
+
+/* =================================
+   ABOUT HERO
+================================= */
+
+.about-hero {
+    position: relative;
+
+    height: 82vh;
+
+    min-height: 650px;
+
+    overflow: hidden;
+
+    background-color: #0D0D0C;
+}
+
+.about-hero-image {
+    position: absolute;
+
+    inset: 0;
+}
+
+.about-hero-image img {
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+}
+
+.about-hero-overlay {
+    position: absolute;
+
+    inset: 0;
+
+    background:
+        linear-gradient(
+            90deg,
+            rgba(13, 13, 12, 0.72) 0%,
+            rgba(13, 13, 12, 0.55) 35%,
+            rgba(13, 13, 12, 0.25) 65%,
+            rgba(13, 13, 12, 0.08) 100%
+        );
+
+    z-index: 1;
+}
+
+.about-hero-content {
+    position: relative;
+
+    z-index: 2;
+
+    width: min(850px, 90%);
+
+    margin-left: 10vw;
+
+    top: 50%;
+
+    transform: translateY(-50%);
+
+    color: #F3EFE7;
+}
+
+.about-label {
+    margin-bottom: 20px;
+
+    color: #E0C58F;
+
+    font-size: 11px;
+
+    letter-spacing: 3px;
+
+    font-weight: 500;
+}
+
+.about-title {
+    margin-bottom: 25px;
+
+    color: #F3EFE7;
+
+    font-family: "Playfair Display", serif;
+
+    font-size: clamp(48px, 7vw, 92px);
+
+    line-height: 0.95;
+
+    letter-spacing: -2px;
+
+    font-weight: 500;
+}
+
+.about-title span {
+    color: #E0C58F;
+}
+
+.about-intro-text {
+    max-width: 560px;
+
+    color: rgba(243, 239, 231, 0.82);
+
+    font-size: 14px;
+
+    line-height: 1.8;
+}
+
+
+/* =================================
+   ABOUT SECTION LABEL
+================================= */
+
+.about-section-label {
+    display: flex;
+
+    align-items: center;
+
+    gap: 15px;
+
+    margin-bottom: 55px;
+
+    color: var(--sapphire);
+}
+
+.about-section-label span {
+    color: var(--accent-color);
+
+    font-size: 12px;
+
+    letter-spacing: 1px;
+}
+
+.about-section-label p {
+    font-size: 10px;
+
+    letter-spacing: 2.5px;
+
+    font-weight: 600;
+}
+
+
+/* =================================
+   ABOUT DEFINITION
+================================= */
+
+.about-definition {
+    padding: 120px 10vw;
+
+    background-color: var(--bg-color);
+}
+
+.definition-grid {
+    display: grid;
+
+    grid-template-columns: 1fr 1fr;
+
+    gap: 90px;
+
+    align-items: center;
+}
+
+.definition-image {
+    width: 100%;
+
+    height: 520px;
+
+    overflow: hidden;
+}
+
+.definition-image img {
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+
+    transition: transform 0.7s ease;
+}
+
+.definition-image:hover img {
+    transform: scale(1.03);
+}
+
+.about-definition-content h2 {
+    margin-bottom: 30px;
+
+    color: var(--royal-blue);
+
+    font-family: "Playfair Display", serif;
+
+    font-size: clamp(38px, 4vw, 58px);
+
+    line-height: 1.05;
+
+    font-weight: 500;
+}
+
+.about-definition-content h2 span {
+    color: var(--sapphire);
+}
+
+.about-definition-content p {
+    max-width: 520px;
+
+    margin-bottom: 20px;
+
+    color: var(--muted-text);
+
+    font-size: 14px;
+
+    line-height: 1.9;
+}
+
+
+/* =================================
+   ABOUT OBJECTIVES
+================================= */
+
+.about-objective {
+    padding: 120px 10vw;
+
+    background-color: var(--shell-stone);
+}
+
+.objective-grid {
+    display: grid;
+
+    grid-template-columns: repeat(3, 1fr);
+
+    gap: 24px;
+}
+
+.objective-card {
+    overflow: hidden;
+
+    background-color: var(--bg-color);
+
+    transition:
+        transform 0.35s ease,
+        box-shadow 0.35s ease;
+}
+
+.objective-card:hover {
+    transform: translateY(-7px);
+
+    box-shadow:
+        0 18px 45px rgba(17, 34, 80, 0.12);
+}
+
+.objective-image {
+    height: 280px;
+
+    overflow: hidden;
+}
+
+.objective-image img {
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+
+    transition: transform 0.6s ease;
+}
+
+.objective-card:hover .objective-image img {
+    transform: scale(1.05);
+}
+
+.objective-card-content {
+    padding: 28px;
+}
+
+.objective-number {
+    display: block;
+
+    margin-bottom: 18px;
+
+    color: var(--accent-color);
+
+    font-size: 11px;
+
+    letter-spacing: 2px;
+}
+
+.objective-card-content h3 {
+    margin-bottom: 14px;
+
+    color: var(--royal-blue);
+
+    font-family: "Playfair Display", serif;
+
+    font-size: 30px;
+
+    font-weight: 500;
+}
+
+.objective-card-content p {
+    color: var(--muted-text);
+
+    font-size: 13px;
+
+    line-height: 1.8;
+}
+
+
+/* =================================
+   ABOUT JOURNEY
+================================= */
+
+.about-journey {
+    padding: 120px 10vw;
+
+    background-color: var(--bg-color);
+}
+
+.journey-content {
+    display: grid;
+
+    grid-template-columns: 0.8fr 1.2fr;
+
+    gap: 90px;
+}
+
+.journey-heading h2 {
+    color: var(--royal-blue);
+
+    font-family: "Playfair Display", serif;
+
+    font-size: clamp(40px, 4vw, 60px);
+
+    line-height: 1.05;
+
+    font-weight: 500;
+}
+
+.journey-heading h2 span {
+    color: var(--sapphire);
+}
+
+.journey-steps {
+    display: flex;
+
+    flex-direction: column;
+}
+
+.journey-step {
+    padding: 20px 0;
+}
+
+.journey-step > span {
+    display: block;
+
+    margin-bottom: 15px;
+
+    color: var(--accent-color);
+
+    font-size: 11px;
+
+    letter-spacing: 2px;
+}
+
+.journey-step h3 {
+    margin-bottom: 10px;
+
+    color: var(--royal-blue);
+
+    font-family: "Playfair Display", serif;
+
+    font-size: 25px;
+
+    font-weight: 500;
+}
+
+.journey-step p {
+    max-width: 480px;
+
+    color: var(--muted-text);
+
+    font-size: 13px;
+
+    line-height: 1.8;
+}
+
+.journey-line {
+    width: 100%;
+    height: 1px;
+
+    background-color: rgba(60, 80, 125, 0.2);
+}
+
+
+/* =================================
+   HERITAGE PAGE
+================================= */
+
+.heritage-page {
+    background-color: var(--bg-color);
+    color: var(--royal-blue);
+}
+
+
+/* =================================
+   HERITAGE NAVBAR
+================================= */
+
+.heritage-navbar {
+    position: absolute;
+    color: #F3EFE7;
+}
+
+.heritage-navbar .nav-links a {
+    color: rgba(243, 239, 231, 0.9);
+}
+
+.heritage-navbar .nav-links a:hover,
+.heritage-navbar .nav-links a.active {
+    color: #F3EFE7;
+}
+
+
+/* =================================
+   HERITAGE HERO
+================================= */
+
+.heritage-hero {
+    position: relative;
+
+    height: 68vh;
+    min-height: 650px;
+
+    overflow: hidden;
+
+    background-color: #0D0D0C;
+}
+
+.heritage-hero img {
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+}
+
+.heritage-hero-overlay {
+    position: absolute;
+    inset: 0;
+
+    background:
+        linear-gradient(
+            90deg,
+            rgba(13, 13, 12, 0.68),
+            rgba(13, 13, 12, 0.25),
+            rgba(13, 13, 12, 0.05)
+        );
+}
+
+.heritage-hero-content {
+    position: absolute;
+
+    left: 10vw;
+    top: 50%;
+
+    transform: translateY(-50%);
+
+    color: #F3EFE7;
+}
+
+.heritage-hero-content p {
+    margin-bottom: 20px;
+
+    color: #E0C58F;
+
+    font-size: 10px;
+
+    letter-spacing: 3px;
+
+    font-weight: 600;
+}
+
+.heritage-hero-content h1 {
+    font-family: "Playfair Display", serif;
+
+    font-size: clamp(48px, 7vw, 90px);
+
+    line-height: 0.95;
+
+    letter-spacing: -2px;
+
+    font-weight: 500;
+}
+
+.heritage-hero-content h1 span {
+    color: #E0C58F;
+}
+
+
+/* =================================
+   HERITAGE INTRO
+================================= */
+
+.heritage-intro {
+    padding: 120px 10vw 80px;
+}
+
+.heritage-intro-label {
+    display: flex;
+
+    align-items: center;
+
+    gap: 14px;
+
+    margin-bottom: 45px;
+}
+
+.heritage-intro-label span {
+    color: var(--quick-sand);
+
+    font-size: 10px;
+
+    letter-spacing: 2px;
+
+    font-weight: 600;
+}
+
+.heritage-intro-label p {
+    color: var(--sapphire);
+
+    font-size: 10px;
+
+    letter-spacing: 2.5px;
+
+    font-weight: 600;
+}
+
+.heritage-intro-content {
+    display: grid;
+
+    grid-template-columns: 1fr 0.8fr;
+
+    gap: 100px;
+
+    align-items: end;
+}
+
+.heritage-intro-content h2 {
+    font-family: "Playfair Display", serif;
+
+    color: var(--royal-blue);
+
+    font-size: clamp(44px, 5vw, 70px);
+
+    line-height: 1;
+
+    font-weight: 500;
+}
+
+.heritage-intro-content h2 span {
+    color: var(--sapphire);
+}
+
+.heritage-intro-content p {
+    color: var(--muted-text);
+
+    font-size: 13px;
+
+    line-height: 1.9;
+}
+
+
+/* =================================
+   HERITAGE PLACES
+================================= */
+
+.heritage-places {
+    padding: 40px 8vw 120px;
+}
+
+.heritage-place-card {
+    display: grid;
+
+    grid-template-columns: 1.15fr 0.85fr;
+
+    min-height: 520px;
+
+    margin-bottom: 80px;
+
+    background-color: var(--shell-stone);
+
+    overflow: hidden;
+}
+
+.heritage-place-card.reverse {
+    grid-template-columns: 0.85fr 1.15fr;
+}
+
+.heritage-place-card.reverse
+.heritage-place-image {
+    order: 2;
+}
+
+.heritage-place-card.reverse
+.heritage-place-info {
+    order: 1;
+}
+
+
+/* =================================
+   PLACE IMAGE
+================================= */
+
+.heritage-place-image {
+    position: relative;
+
+    min-height: 520px;
+
+    overflow: hidden;
+}
+
+.heritage-place-image img {
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+
+    transition:
+        transform 0.8s ease;
+}
+
+.heritage-place-card:hover
+.heritage-place-image img {
+    transform: scale(1.04);
+}
+
+.heritage-place-number {
+    position: absolute;
+
+    top: 22px;
+    left: 22px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    width: 38px;
+    height: 38px;
+
+    background-color:
+        rgba(245, 240, 233, 0.94);
+
+    color: var(--royal-blue);
+
+    font-size: 9px;
+
+    letter-spacing: 1px;
+
+    font-weight: 600;
+}
+
+
+/* =================================
+   PLACE INFO
+================================= */
+
+.heritage-place-info {
+    display: flex;
+
+    flex-direction: column;
+
+    justify-content: center;
+
+    padding: 70px;
+}
+
+.heritage-place-city {
+    margin-bottom: 18px;
+
+    color: var(--sapphire);
+
+    font-size: 9px;
+
+    letter-spacing: 2.5px;
+
+    font-weight: 600;
+}
+
+.heritage-place-info h2 {
+    margin-bottom: 22px;
+
+    color: var(--royal-blue);
+
+    font-family: "Playfair Display", serif;
+
+    font-size: clamp(36px, 4vw, 55px);
+
+    line-height: 1;
+
+    font-weight: 500;
+}
+
+.heritage-place-info p {
+    max-width: 440px;
+
+    margin-bottom: 35px;
+
+    color: var(--muted-text);
+
+    font-size: 13px;
+
+    line-height: 1.9;
+}
+
+.heritage-place-info a {
+    display: inline-flex;
+
+    align-items: center;
+
+    gap: 16px;
+
+    width: fit-content;
+
+    padding-bottom: 9px;
+
+    border-bottom:
+        1px solid
+        var(--royal-blue);
+
+    color: var(--royal-blue);
+
+    font-size: 9px;
+
+    letter-spacing: 1.8px;
+
+    font-weight: 600;
+
+    transition:
+        gap 0.3s ease;
+}
+
+.heritage-place-info a:hover {
+    gap: 24px;
+}
+
+.heritage-place-info a span {
+    font-size: 16px;
+}
+
+
+/* =================================
+   CULTURAL HERITAGE
+================================= */
+
+.cultural-heritage {
+    padding: 120px 8vw;
+
+    background-color: var(--shell-stone);
+}
+
+.cultural-heading {
+    max-width: 850px;
+
+    margin-bottom: 60px;
+}
+
+.cultural-heading h2 {
+    margin-bottom: 25px;
+
+    color: var(--royal-blue);
+
+    font-family: "Playfair Display", serif;
+
+    font-size: clamp(44px, 5vw, 70px);
+
+    line-height: 1;
+
+    font-weight: 500;
+}
+
+.cultural-heading h2 span {
+    color: var(--sapphire);
+}
+
+.cultural-heading > p {
+    max-width: 600px;
+
+    color: var(--muted-text);
+
+    font-size: 13px;
+
+    line-height: 1.9;
+}
+
+
+/* =================================
+   FESTIVAL GRID
+================================= */
+
+.festival-grid {
+    display: grid;
+
+    grid-template-columns:
+        repeat(2, 1fr);
+
+    gap: 24px;
+}
+
+
+/* =================================
+   FESTIVAL CARD
+================================= */
+
+.festival-card {
+    overflow: hidden;
+
+    background-color: var(--bg-color);
+
+    transition:
+        transform 0.35s ease,
+        box-shadow 0.35s ease;
+}
+
+.festival-card:hover {
+    transform: translateY(-7px);
+
+    box-shadow:
+        0 20px 50px
+        rgba(17, 34, 80, 0.14);
+}
+
+
+/* =================================
+   FESTIVAL IMAGE
+================================= */
+
+.festival-image {
+    position: relative;
+
+    height: 360px;
+
+    overflow: hidden;
+}
+
+.festival-image img {
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+
+    transition:
+        transform 0.7s ease;
+}
+
+.festival-card:hover
+.festival-image img {
+    transform: scale(1.05);
+}
+
+.festival-image span {
+    position: absolute;
+
+    top: 18px;
+    left: 18px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    width: 32px;
+    height: 32px;
+
+    background-color:
+        rgba(245, 240, 233, 0.94);
+
+    color: var(--royal-blue);
+
+    font-size: 9px;
+
+    font-weight: 600;
+}
+
+
+/* =================================
+   FESTIVAL CONTENT
+================================= */
+
+.festival-content {
+    padding: 25px;
+}
+
+.festival-content p {
+    margin-bottom: 10px;
+
+    color: var(--sapphire);
+
+    font-size: 8px;
+
+    letter-spacing: 2px;
+
+    font-weight: 600;
+}
+
+.festival-content h3 {
+    margin-bottom: 22px;
+
+    color: var(--royal-blue);
+
+    font-family: "Playfair Display", serif;
+
+    font-size: 31px;
+
+    font-weight: 500;
+}
+
+.festival-content > div {
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    padding-top: 15px;
+
+    border-top:
+        1px solid
+        rgba(17, 34, 80, 0.12);
+
+    color: var(--royal-blue);
+
+    font-size: 9px;
+
+    letter-spacing: 1.8px;
+
+    font-weight: 600;
+}
+
+.festival-content > div span {
+    font-size: 17px;
+
+    transition:
+        transform 0.3s ease;
+}
+
+.festival-card:hover
+.festival-content > div span {
+    transform: translateX(5px);
+}
+
+
+/* =================================
+   FOOTER
+================================= */
+
+.simple-footer {
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    padding: 30px 8vw;
+
+    background-color: var(--royal-blue);
+
+    color: var(--bg-color);
+}
+
+.simple-footer p {
+    font-size: 9px;
+
+    letter-spacing: 2px;
+
+    font-weight: 600;
+}
+
+.simple-footer span {
+    color: var(--quick-sand);
+
+    font-size: 8px;
+
+    letter-spacing: 2px;
+}
+
+
+/* =================================
+   HERITAGE MOBILE
+================================= */
+
+@media (max-width: 800px) {
+
+    .heritage-hero {
+        height: 60vh;
+    }
+
+    .heritage-intro {
+        padding:
+            80px 7vw 60px;
+    }
+
+    .heritage-intro-content {
+        grid-template-columns: 1fr;
+
+        gap: 30px;
+    }
+
+    .heritage-places {
+        padding:
+            20px 5vw 80px;
+    }
+
+    .heritage-place-card,
+    .heritage-place-card.reverse {
+        grid-template-columns: 1fr;
+
+        margin-bottom: 35px;
+    }
+
+    .heritage-place-card.reverse
+    .heritage-place-image {
+        order: 1;
+    }
+
+    .heritage-place-card.reverse
+    .heritage-place-info {
+        order: 2;
+    }
+
+    .heritage-place-image {
+        min-height: 350px;
+    }
+
+    .heritage-place-info {
+        padding: 45px 30px;
+    }
+
+    .cultural-heritage {
+        padding:
+            80px 6vw;
+    }
+
+    .festival-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .festival-image {
+        height: 300px;
+    }
+
+    .simple-footer {
+        flex-direction: column;
+
+        align-items: flex-start;
+
+        gap: 12px;
+    }
+}
+
+
+/* =================================
+   PLACE DETAIL PAGES
+================================= */
+
+.place-page {
+    background-color: var(--bg-color);
+    color: var(--royal-blue);
+}
+
+
+/* =================================
+   NAVBAR
+================================= */
+
+.place-navbar {
+    position: absolute;
+
+    color: #F3EFE7;
+}
+
+.place-navbar .nav-links a {
+    color: rgba(243, 239, 231, 0.9);
+}
+
+.place-navbar .nav-links a:hover,
+.place-navbar .nav-links a.active {
+    color: #F3EFE7;
+}
+
+
+/* =================================
+   HERO
+================================= */
+
+.place-hero {
+    position: relative;
+
+    height: 88vh;
+    min-height: 650px;
+
+    overflow: hidden;
+
+    background-color: #0D0D0C;
+}
+
+.place-hero > img {
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+}
+
+.place-hero-overlay {
+    position: absolute;
+
+    inset: 0;
+
+    background:
+        linear-gradient(
+            90deg,
+            rgba(13, 13, 12, 0.72) 0%,
+            rgba(13, 13, 12, 0.42) 38%,
+            rgba(13, 13, 12, 0.12) 75%,
+            rgba(13, 13, 12, 0.02) 100%
+        );
+}
+
+.place-hero-content {
+    position: absolute;
+
+    left: 10vw;
+    top: 50%;
+
+    transform: translateY(-50%);
+
+    color: #F3EFE7;
+}
+
+.place-hero-label {
+    margin-bottom: 22px;
+
+    color: #E0C58F;
+
+    font-size: 10px;
+
+    letter-spacing: 3px;
+
+    font-weight: 600;
+}
+
+.place-hero-content h1 {
+    margin-bottom: 25px;
+
+    font-family: "Playfair Display", serif;
+
+    font-size: clamp(58px, 8vw, 105px);
+
+    line-height: 0.9;
+
+    letter-spacing: -3px;
+
+    font-weight: 500;
+}
+
+.place-hero-content h1 span {
+    color: #E0C58F;
+}
+
+.place-hero-subtitle {
+    color: rgba(243, 239, 231, 0.82);
+
+    font-size: 13px;
+
+    letter-spacing: 0.3px;
+}
+
+.place-hero-bottom {
+    position: absolute;
+
+    left: 10vw;
+    right: 5vw;
+    bottom: 35px;
+
+    display: flex;
+
+    justify-content: space-between;
+
+    color: rgba(243, 239, 231, 0.7);
+
+    font-size: 8px;
+
+    letter-spacing: 2px;
+}
+
+
+/* =================================
+   SECTION LABEL
+================================= */
+
+.place-section-label {
+    display: flex;
+
+    align-items: center;
+
+    gap: 14px;
+
+    margin-bottom: 45px;
+}
+
+.place-section-label span {
+    color: var(--quick-sand);
+
+    font-size: 10px;
+
+    letter-spacing: 2px;
+
+    font-weight: 600;
+}
+
+.place-section-label p {
+    color: var(--sapphire);
+
+    font-size: 10px;
+
+    letter-spacing: 2.5px;
+
+    font-weight: 600;
+}
+
+
+/* =================================
+   INTRO
+================================= */
+
+.place-intro {
+    padding: 120px 10vw;
+}
+
+.place-intro-grid {
+    display: grid;
+
+    grid-template-columns: 1fr 0.8fr;
+
+    gap: 100px;
+
+    align-items: start;
+}
+
+.place-intro-grid h2 {
+    color: var(--royal-blue);
+
+    font-family: "Playfair Display", serif;
+
+    font-size: clamp(46px, 5vw, 72px);
+
+    line-height: 0.98;
+
+    font-weight: 500;
+}
+
+.place-intro-grid h2 span {
+    color: var(--sapphire);
+}
+
+.place-intro-grid div p {
+    margin-bottom: 22px;
+
+    color: var(--muted-text);
+
+    font-size: 13px;
+
+    line-height: 1.9;
+}
+
+
+/* =================================
+   SIGNIFICANCE
+================================= */
+
+.place-significance {
+    display: grid;
+
+    grid-template-columns: 1fr 1fr;
+
+    min-height: 650px;
+
+    background-color: var(--shell-stone);
+}
+
+.place-significance-image {
+    overflow: hidden;
+}
+
+.place-significance-image img {
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+}
+
+.place-significance-content {
+    display: flex;
+
+    flex-direction: column;
+
+    justify-content: center;
+
+    padding: 80px;
+}
+
+.place-significance-content .place-section-label {
+    margin-bottom: 35px;
+}
+
+.place-significance-content h2 {
+    margin-bottom: 28px;
+
+    color: var(--royal-blue);
+
+    font-family: "Playfair Display", serif;
+
+    font-size: clamp(45px, 5vw, 68px);
+
+    line-height: 0.98;
+
+    font-weight: 500;
+}
+
+.place-significance-content h2 span {
+    color: var(--sapphire);
+}
+
+.place-significance-content > p {
+    max-width: 500px;
+
+    margin-bottom: 35px;
+
+    color: var(--muted-text);
+
+    font-size: 13px;
+
+    line-height: 1.9;
+}
+
+
+/* =================================
+   FACTS
+================================= */
+
+.place-fact {
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 7px;
+
+    padding: 17px 0;
+
+    border-top:
+        1px solid
+        rgba(17, 34, 80, 0.15);
+}
+
+.place-fact span {
+    color: var(--sapphire);
+
+    font-size: 8px;
+
+    letter-spacing: 2px;
+
+    font-weight: 600;
+}
+
+.place-fact strong {
+    color: var(--royal-blue);
+
+    font-size: 12px;
+
+    font-weight: 500;
+}
+
+
+/* =================================
+   OUR VISIT
+================================= */
+
+.place-visit {
+    padding: 120px 8vw;
+}
+
+.place-visit-heading {
+    display: grid;
+
+    grid-template-columns: 1fr 0.7fr;
+
+    gap: 100px;
+
+    align-items: end;
+
+    margin-bottom: 60px;
+}
+
+.place-visit-heading h2 {
+    color: var(--royal-blue);
+
+    font-family: "Playfair Display", serif;
+
+    font-size: clamp(46px, 5vw, 72px);
+
+    line-height: 0.98;
+
+    font-weight: 500;
+}
+
+.place-visit-heading h2 span {
+    color: var(--sapphire);
+}
+
+.place-visit-heading p {
+    color: var(--muted-text);
+
+    font-size: 13px;
+
+    line-height: 1.9;
+}
+
+.place-visit-main-image {
+    width: 100%;
+
+    height: 600px;
+
+    overflow: hidden;
+}
+
+.place-visit-main-image img {
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+
+    transition:
+        transform 0.8s ease;
+}
+
+.place-visit-main-image:hover img {
+    transform: scale(1.03);
+}
+
+
+/* =================================
+   GALLERY
+================================= */
+
+.place-gallery {
+    padding: 0 8vw 120px;
+}
+
+.place-gallery-grid {
+    display: grid;
+
+    grid-template-columns:
+        1.2fr 0.8fr 0.8fr;
+
+    gap: 15px;
+}
+
+.gallery-image {
+    height: 330px;
+
+    overflow: hidden;
+}
+
+.gallery-image img {
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+
+    transition:
+        transform 0.7s ease;
+}
+
+.gallery-image:hover img {
+    transform: scale(1.05);
+}
+
+
+/* =================================
+   BACK
+================================= */
+
+.place-back {
+    display: flex;
+
+    justify-content: center;
+
+    padding:
+        30px 8vw 100px;
+}
+
+.place-back a {
+    display: flex;
+
+    align-items: center;
+
+    gap: 15px;
+
+    padding-bottom: 10px;
+
+    border-bottom:
+        1px solid
+        var(--royal-blue);
+
+    color: var(--royal-blue);
+
+    font-size: 9px;
+
+    letter-spacing: 2px;
+
+    font-weight: 600;
+
+    transition:
+        gap 0.3s ease;
+}
+
+.place-back a:hover {
+    gap: 23px;
+}
+
+.place-back a span {
+    font-size: 16px;
+}
+
+
+/* =================================
+   MOBILE
+================================= */
+
+@media (max-width: 800px) {
+
+    .place-hero {
+        height: 75vh;
+
+        min-height: 550px;
+    }
+
+    .place-hero-content {
+        left: 7vw;
+    }
+
+    .place-hero-content h1 {
+        font-size: clamp(52px, 15vw, 80px);
+    }
+
+    .place-hero-bottom {
+        left: 7vw;
+        right: 7vw;
+    }
+
+    .place-intro {
+        padding:
+            80px 7vw;
+    }
+
+    .place-intro-grid {
+        grid-template-columns: 1fr;
+
+        gap: 35px;
+    }
+
+    .place-significance {
+        grid-template-columns: 1fr;
+    }
+
+    .place-significance-image {
+        height: 450px;
+    }
+
+    .place-significance-content {
+        padding: 70px 7vw;
+    }
+
+    .place-visit {
+        padding:
+            80px 7vw;
+    }
+
+    .place-visit-heading {
+        grid-template-columns: 1fr;
+
+        gap: 30px;
+    }
+
+    .place-visit-main-image {
+        height: 400px;
+    }
+
+    .place-gallery {
+        padding:
+            0 7vw 80px;
+    }
+
+    .place-gallery-grid {
+        grid-template-columns: 1fr;
+
+        gap: 12px;
+    }
+
+    .gallery-image {
+        height: 300px;
+    }
+
+}
+/* =========================================================
+   GATEWAY OF INDIA — EDITORIAL DETAIL PAGE
+========================================================= */
+
+
+/* =========================================================
+   BASE
+========================================================= */
+
+.gateway-page {
+    background: #F5F0E9;
+    color: #112250;
+}
+
+.gateway-page img {
+    display: block;
+}
+
+
+/* =========================================================
+   NAVBAR
+========================================================= */
+
+.gateway-navbar {
+    position: absolute;
+    z-index: 20;
+
+    top: 0;
+    left: 0;
+
+    width: 100%;
+
+    color: #F5F0E9;
+}
+
+.gateway-navbar .nav-links a {
+    color: rgba(245, 240, 233, 0.85);
+}
+
+.gateway-navbar .nav-links a:hover,
+.gateway-navbar .nav-links a.active {
+    color: #F5F0E9;
+}
+
+
+/* =========================================================
+   HERO
+========================================================= */
+
+.gateway-hero {
+    position: relative;
+
+    height: 94vh;
+    min-height: 680px;
+
+    overflow: hidden;
+
+    background: #0D0D0C;
+}
+
+.gateway-hero > img {
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+
+    animation: gatewayHeroZoom 12s ease-out forwards;
+}
+
+@keyframes gatewayHeroZoom {
+
+    from {
+        transform: scale(1.08);
+    }
+
+    to {
+        transform: scale(1);
+    }
+
+}
+
+.gateway-hero-shade {
+    position: absolute;
+
+    inset: 0;
+
+    background:
+        linear-gradient(
+            90deg,
+            rgba(10, 10, 9, 0.78) 0%,
+            rgba(10, 10, 9, 0.43) 42%,
+            rgba(10, 10, 9, 0.08) 100%
+        );
+}
+
+.gateway-hero-content {
+    position: absolute;
+
+    left: 10vw;
+    top: 50%;
+
+    transform: translateY(-45%);
+
+    max-width: 850px;
+
+    color: #F5F0E9;
+}
+
+.gateway-eyebrow {
+    margin-bottom: 28px;
+
+    color: #E0C58F;
+
+    font-size: 9px;
+
+    letter-spacing: 3px;
+
+    font-weight: 600;
+}
+
+.gateway-hero-content h1 {
+    margin: 0;
+
+    font-family: "Playfair Display", serif;
+
+    font-size: clamp(70px, 10vw, 145px);
+
+    line-height: 0.84;
+
+    letter-spacing: -5px;
+
+    font-weight: 400;
+}
+
+.gateway-hero-content h1 span {
+    display: block;
+
+    color: #E0C58F;
+
+    font-style: normal;
+}
+
+.gateway-hero-description {
+    max-width: 350px;
+
+    margin-top: 42px;
+
+    color: rgba(245, 240, 233, 0.76);
+
+    font-size: 13px;
+
+    line-height: 1.8;
+}
+
+.gateway-hero-location {
+    position: absolute;
+
+    left: 10vw;
+    right: 6vw;
+    bottom: 35px;
+
+    display: flex;
+
+    justify-content: space-between;
+
+    color: rgba(245, 240, 233, 0.7);
+
+    font-size: 8px;
+
+    letter-spacing: 2.5px;
+}
+
+.gateway-scroll {
+    position: absolute;
+
+    right: 5vw;
+    bottom: 34px;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 12px;
+
+    color: rgba(245, 240, 233, 0.7);
+
+    writing-mode: vertical-rl;
+}
+
+.gateway-scroll span {
+    width: 1px;
+    height: 45px;
+
+    background: rgba(245, 240, 233, 0.5);
+}
+
+.gateway-scroll p {
+    font-size: 7px;
+
+    letter-spacing: 2px;
+}
+
+
+/* =========================================================
+   SHARED LABEL
+========================================================= */
+
+.gateway-small-label {
+    margin-bottom: 22px;
+
+    color: #3C507D;
+
+    font-size: 8px;
+
+    letter-spacing: 2.5px;
+
+    font-weight: 600;
+}
+
+
+/* ==========================================
+   INTRODUCTION
+=========================================== */
+
+.gateway-intro {
+    display: grid;
+
+    grid-template-columns: 1fr 1fr;
+
+    gap: 80px;
+
+    align-items: center;
+
+    padding: 120px 10vw;
+}
+
+.gateway-intro-content {
+    max-width: 600px;
+}
+
+.gateway-intro-content h2 {
+    margin-bottom: 35px;
+
+    color: #112250;
+
+    font-family: "Playfair Display", serif;
+
+    font-size: clamp(55px, 6vw, 85px);
+
+    line-height: .9;
+
+    font-weight: 400;
+
+    letter-spacing: -3px;
+}
+
+.gateway-intro-content h2 em {
+    display: block;
+
+    color: #3C507D;
+
+    font-style: normal;
+}
+
+.gateway-intro-description {
+    max-width: 500px;
+
+    margin-bottom: 18px;
+
+    color: #3C507D;
+
+    font-size: 13px;
+
+    line-height: 1.9;
+}
+
+.gateway-intro-image {
+    height: 580px;
+
+    overflow: hidden;
+}
+
+.gateway-intro-image img {
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+
+    transition: transform .8s ease;
+}
+
+.gateway-intro-image:hover img {
+    transform: scale(1.03);
+}
+
+/* ==========================================
+   ARCHITECTURE
+=========================================== */
+
+.gateway-architecture {
+    padding: 100px 8vw;
+
+    background: #D9CBC2;
+}
+
+.gateway-section-heading {
+    display: grid;
+
+    grid-template-columns: 1fr .6fr;
+
+    gap: 80px;
+
+    align-items: end;
+
+    margin-bottom: 55px;
+}
+
+.gateway-section-heading h2 {
+    color: #112250;
+
+    font-family: "Playfair Display", serif;
+
+    font-size: clamp(48px, 5.5vw, 75px);
+
+    line-height: .9;
+
+    font-weight: 400;
+
+    letter-spacing: -2px;
+}
+
+.gateway-section-heading h2 em {
+    display: block;
+
+    color: #3C507D;
+
+    font-style: normal;
+}
+
+.gateway-heading-description {
+    color: #3C507D;
+
+    font-size: 12px;
+
+    line-height: 1.8;
+}
+
+
+/* CARDS */
+
+.architecture-cards {
+    display: grid;
+
+    grid-template-columns: repeat(3, 1fr);
+
+    gap: 16px;
+}
+
+.architecture-card {
+    min-height: 310px;
+
+    padding: 30px;
+
+    background: #F5F0E9;
+
+    transition:
+        transform .35s ease,
+        box-shadow .35s ease;
+}
+
+.architecture-card:hover {
+    transform: translateY(-6px);
+
+    box-shadow:
+        0 15px 35px
+        rgba(17, 34, 80, .10);
+}
+
+.architecture-number {
+    display: block;
+
+    margin-bottom: 45px;
+
+    color: #E0C58F;
+
+    font-size: 10px;
+
+    letter-spacing: 2px;
+
+    font-weight: 600;
+}
+
+.architecture-card-label {
+    margin-bottom: 10px;
+
+    color: #3C507D;
+
+    font-size: 8px;
+
+    letter-spacing: 2px;
+
+    font-weight: 600;
+}
+
+.architecture-card h3 {
+    margin-bottom: 18px;
+
+    color: #112250;
+
+    font-family: "Playfair Display", serif;
+
+    font-size: 30px;
+
+    line-height: 1;
+
+    font-weight: 400;
+}
+
+.architecture-card > p:last-child {
+    color: #3C507D;
+
+    font-size: 11px;
+
+    line-height: 1.8;
+}
+
+
+/* =========================================================
+   IMAGE BREAK
+========================================================= */
+
+.gateway-image-break {
+    position: relative;
+
+    height: 75vh;
+    min-height: 550px;
+
+    overflow: hidden;
+
+    background: #111;
+}
+
+.gateway-image-break img {
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+
+    transition:
+        transform 1s ease;
+}
+
+.gateway-image-break:hover img {
+    transform: scale(1.025);
+}
+
+.gateway-image-break::after {
+    content: "";
+
+    position: absolute;
+
+    inset: 0;
+
+    background:
+        linear-gradient(
+            0deg,
+            rgba(10, 10, 9, 0.65),
+            transparent 55%
+        );
+}
+
+.image-break-caption {
+    position: absolute;
+
+    z-index: 2;
+
+    left: 8vw;
+    right: 8vw;
+    bottom: 45px;
+
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: end;
+
+    color: #F5F0E9;
+}
+
+.image-break-caption span {
+    color: #E0C58F;
+
+    font-size: 8px;
+
+    letter-spacing: 3px;
+}
+
+.image-break-caption p {
+    max-width: 300px;
+
+    font-family: "Playfair Display", serif;
+
+    font-size: 22px;
+
+    line-height: 1.2;
+}
+
+
+/* ==========================================
+   HISTORY
+=========================================== */
+
+.gateway-history {
+    padding: 110px 8vw;
+
+    background: #F5F0E9;
+}
+
+.gateway-history-heading {
+    display: grid;
+
+    grid-template-columns: 1fr .6fr;
+
+    gap: 80px;
+
+    align-items: end;
+
+    margin-bottom: 55px;
+}
+
+.gateway-history-heading h2 {
+    color: #112250;
+
+    font-family: "Playfair Display", serif;
+
+    font-size: clamp(48px, 5.5vw, 75px);
+
+    line-height: .9;
+
+    font-weight: 400;
+
+    letter-spacing: -2px;
+}
+
+.gateway-history-heading h2 em {
+    display: block;
+
+    color: #3C507D;
+
+    font-style: normal;
+}
+
+.gateway-history-heading > p {
+    color: #3C507D;
+
+    font-size: 12px;
+
+    line-height: 1.8;
+}
+
+
+/* HISTORY CARDS */
+
+.history-cards {
+    display: grid;
+
+    grid-template-columns: repeat(3, 1fr);
+
+    gap: 16px;
+}
+
+.history-card {
+    min-height: 300px;
+
+    padding: 30px;
+
+    border:
+        1px solid
+        rgba(17, 34, 80, .13);
+
+    background: #D9CBC2;
+
+    transition:
+        transform .35s ease,
+        background .35s ease;
+}
+
+.history-card:hover {
+    transform: translateY(-5px);
+
+    background: #E0C58F;
+}
+
+.history-card > span {
+    display: block;
+
+    margin-bottom: 40px;
+
+    color: #B89B63;
+
+    font-size: 10px;
+
+    letter-spacing: 2px;
+}
+
+.history-card > p:first-of-type {
+    margin-bottom: 12px;
+
+    color: #3C507D;
+
+    font-size: 8px;
+
+    letter-spacing: 2px;
+
+    font-weight: 600;
+}
+
+.history-card h3 {
+    color: #112250;
+
+    font-family: "Playfair Display", serif;
+
+    font-size: 28px;
+
+    line-height: 1;
+
+    font-weight: 400;
+}
+
+.history-card-line {
+    width: 35px;
+
+    height: 1px;
+
+    margin:
+        25px 0 18px;
+
+    background: #B89B63;
+}
+
+.history-description {
+    color: #3C507D;
+
+    font-size: 11px;
+
+    line-height: 1.8;
+}
+
+/* =========================================================
+   1948 FEATURE
+========================================================= */
+
+.gateway-1948 {
+    position: relative;
+
+    min-height: 600px;
+
+    display: flex;
+
+    align-items: center;
+
+    overflow: hidden;
+
+    padding: 100px 10vw;
+
+    background: #112250;
+
+    color: #F5F0E9;
+}
+
+.gateway-1948-number {
+    position: absolute;
+
+    right: -2vw;
+    bottom: -7vw;
+
+    color: rgba(224, 197, 143, 0.1);
+
+    font-family: "Playfair Display", serif;
+
+    font-size: 28vw;
+
+    line-height: 0.7;
+
+    font-weight: 400;
+}
+
+.gateway-1948-content {
+    position: relative;
+
+    z-index: 2;
+
+    max-width: 600px;
+}
+
+.gateway-1948-content .gateway-small-label {
+    color: #E0C58F;
+}
+
+.gateway-1948-content h2 {
+    margin-bottom: 35px;
+
+    color: #F5F0E9;
+
+    font-family: "Playfair Display", serif;
+
+    font-size: clamp(60px, 8vw, 110px);
+
+    line-height: 0.85;
+
+    font-weight: 400;
+
+    letter-spacing: -3px;
+}
+
+.gateway-1948-content h2 em {
+    display: block;
+
+    color: #E0C58F;
+
+    font-style: normal;
+}
+
+.gateway-1948-content > p {
+    max-width: 500px;
+
+    margin-bottom: 45px;
+
+    color: rgba(245, 240, 233, 0.72);
+
+    font-size: 13px;
+
+    line-height: 1.9;
+}
+
+.gateway-1948-date {
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 8px;
+
+    padding-top: 20px;
+
+    border-top:
+        1px solid
+        rgba(245, 240, 233, 0.2);
+}
+
+.gateway-1948-date strong {
+    color: #F5F0E9;
+
+    font-size: 10px;
+
+    letter-spacing: 3px;
+}
+
+.gateway-1948-date span {
+    color: rgba(245, 240, 233, 0.55);
+
+    font-size: 10px;
+}
+
+
+/* =========================================================
+   VISIT
+========================================================= */
+
+.gateway-visit {
+    padding: 150px 8vw;
+}
+
+.gateway-visit-heading {
+    display: grid;
+
+    grid-template-columns: 1fr 0.5fr;
+
+    gap: 100px;
+
+    align-items: end;
+
+    margin-bottom: 75px;
+}
+
+.gateway-visit-heading h2 {
+    color: #112250;
+
+    font-family: "Playfair Display", serif;
+
+    font-size: clamp(55px, 7vw, 95px);
+
+    line-height: 0.88;
+
+    font-weight: 400;
+
+    letter-spacing: -3px;
+}
+
+.gateway-visit-heading h2 em {
+    display: block;
+
+    color: #3C507D;
+
+    font-style: normal;
+}
+
+.gateway-visit-heading > p {
+    color: #3C507D;
+
+    font-size: 12px;
+
+    line-height: 1.9;
+}
+
+.gateway-visit-image {
+    position: relative;
+
+    height: 78vh;
+    min-height: 550px;
+
+    overflow: hidden;
+}
+
+.gateway-visit-image img {
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+
+    transition:
+        transform 1s ease;
+}
+
+.gateway-visit-image:hover img {
+    transform: scale(1.025);
+}
+
+.visit-image-label {
+    position: absolute;
+
+    z-index: 2;
+
+    left: 30px;
+    right: 30px;
+    bottom: 25px;
+
+    display: flex;
+
+    justify-content: space-between;
+
+    color: #F5F0E9;
+
+    font-size: 8px;
+
+    letter-spacing: 2.5px;
+}
+
+
+/* =========================================================
+   GALLERY
+========================================================= */
+
+.gateway-gallery {
+    padding: 30px 8vw 150px;
+}
+
+.gateway-gallery-heading {
+    margin-bottom: 70px;
+}
+
+.gateway-gallery-heading h2 {
+    color: #112250;
+
+    font-family: "Playfair Display", serif;
+
+    font-size: clamp(55px, 7vw, 95px);
+
+    line-height: 0.9;
+
+    font-weight: 400;
+
+    letter-spacing: -3px;
+}
+
+.gateway-gallery-heading h2 em {
+    color: #3C507D;
+
+    font-style: normal;
+}
+
+.gateway-gallery-grid {
+    display: grid;
+
+    grid-template-columns: 1.35fr 0.65fr;
+
+    grid-template-rows: 300px 300px;
+
+    gap: 16px;
+}
+
+.gallery-large {
+    grid-row: 1 / 3;
+
+    overflow: hidden;
+}
+
+.gallery-small {
+    overflow: hidden;
+}
+
+.gallery-large img,
+.gallery-small img {
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+
+    transition:
+        transform 0.8s ease;
+}
+
+.gallery-large:hover img,
+.gallery-small:hover img {
+    transform: scale(1.04);
+}
+
+
+/* =========================================================
+   NEXT
+========================================================= */
+
+.gateway-next {
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+
+    gap: 25px;
+
+    padding:
+        90px 20px 110px;
+
+    border-top:
+        1px solid
+        rgba(17, 34, 80, 0.12);
+}
+
+.gateway-next > p {
+    color: #3C507D;
+
+    font-size: 8px;
+
+    letter-spacing: 3px;
+
+    font-weight: 600;
+}
+
+.gateway-next a {
+    display: flex;
+
+    align-items: center;
+
+    gap: 15px;
+
+    color: #112250;
+
+    font-size: 9px;
+
+    letter-spacing: 2px;
+
+    font-weight: 600;
+
+    transition:
+        gap 0.3s ease;
+}
+
+.gateway-next a:hover {
+    gap: 25px;
+}
+
+.gateway-next a span {
+    font-size: 18px;
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 800px) {
+
+
+    /* HERO */
+
+    .gateway-hero {
+        height: 85vh;
+
+        min-height: 600px;
+    }
+
+    .gateway-hero-content {
+        left: 7vw;
+        right: 7vw;
+    }
+
+    .gateway-hero-content h1 {
+        font-size:
+            clamp(65px, 17vw, 100px);
+
+        letter-spacing: -3px;
+    }
+
+    .gateway-hero-location {
+        left: 7vw;
+        right: 7vw;
+    }
+
+    .gateway-scroll {
+        display: none;
+    }
+
+
+    /* INTRO */
+
+    .gateway-intro {
+        grid-template-columns: 1fr;
+
+        gap: 20px;
+
+        padding:
+            100px 7vw;
+    }
+
+    .gateway-intro-number {
+        font-size: 18px;
+    }
+
+    .gateway-intro-content h2 {
+        margin-bottom: 40px;
+
+        font-size:
+            clamp(50px, 14vw, 80px);
+    }
+
+    .gateway-intro-text {
+        grid-template-columns: 1fr;
+
+        gap: 20px;
+    }
+
+
+    /* ARCHITECTURE */
+
+    .gateway-architecture {
+        padding:
+            100px 7vw;
+    }
+
+    .gateway-section-heading {
+        grid-template-columns: 1fr;
+
+        gap: 30px;
+
+        margin-bottom: 60px;
+    }
+
+    .gateway-section-heading h2 {
+        font-size:
+            clamp(50px, 14vw, 80px);
+    }
+
+    .architecture-feature {
+        grid-template-columns: 45px 1fr;
+
+        gap: 20px;
+
+        padding: 45px 0;
+    }
+
+    .architecture-feature-text {
+        grid-column: 2;
+
+        justify-self: start;
+    }
+
+    .architecture-feature-title h3 {
+        font-size: 40px;
+    }
+
+
+    /* IMAGE */
+
+    .gateway-image-break {
+        height: 60vh;
+
+        min-height: 450px;
+    }
+
+    .image-break-caption {
+        left: 7vw;
+        right: 7vw;
+    }
+
+
+    /* HISTORY */
+
+    .gateway-history {
+        padding:
+            100px 7vw;
+    }
+
+    .gateway-history-heading {
+        grid-template-columns: 1fr;
+
+        gap: 25px;
+
+        margin-bottom: 65px;
+    }
+
+    .gateway-history-heading h2 {
+        font-size:
+            clamp(50px, 14vw, 80px);
+    }
+
+    .history-line {
+        display: none;
+    }
+
+    .history-item {
+        grid-template-columns: 45px 1fr;
+
+        gap: 20px;
+
+        min-height: auto;
+
+        margin-bottom: 60px;
+    }
+
+    .history-year {
+        grid-column: 1 / 3;
+    }
+
+    .history-marker {
+        grid-row: 2;
+
+        width: 38px;
+        height: 38px;
+    }
+
+    .history-content {
+        grid-column: 2;
+
+        padding-bottom: 0;
+    }
+
+    .history-content h3 {
+        font-size: 32px;
+    }
+
+
+    /* 1948 */
+
+    .gateway-1948 {
+        min-height: 600px;
+
+        padding:
+            90px 7vw;
+    }
+
+    .gateway-1948-number {
+        font-size: 55vw;
+
+        right: -5vw;
+    }
+
+    .gateway-1948-content h2 {
+        font-size:
+            clamp(60px, 17vw, 100px);
+    }
+
+
+    /* VISIT */
+
+    .gateway-visit {
+        padding:
+            100px 7vw;
+    }
+
+    .gateway-visit-heading {
+        grid-template-columns: 1fr;
+
+        gap: 30px;
+
+        margin-bottom: 50px;
+    }
+
+    .gateway-visit-heading h2 {
+        font-size:
+            clamp(50px, 14vw, 80px);
+    }
+
+    .gateway-visit-image {
+        height: 60vh;
+
+        min-height: 450px;
+    }
+
+
+    /* GALLERY */
+
+    .gateway-gallery {
+        padding:
+            0 7vw 100px;
+    }
+
+    .gateway-gallery-heading h2 {
+        font-size:
+            clamp(50px, 14vw, 80px);
+    }
+
+    .gateway-gallery-grid {
+        grid-template-columns: 1fr;
+
+        grid-template-rows:
+            420px 250px 250px;
+    }
+
+    .gallery-large {
+        grid-row: auto;
+    }
+
+
+    /* NEXT */
+
+    .gateway-next {
+        padding:
+            75px 20px 90px;
+    }
+
+}
+
+/* ==========================================
+   PANHALA - LOCAL FOOD
+=========================================== */
+
+.panhala-food {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 80px;
+    align-items: center;
+    padding: 120px 10vw;
+    background: #F5F0E9;
+}
+
+.panhala-food-content {
+    max-width: 600px;
+}
+
+.panhala-food-content h2 {
+    margin-bottom: 35px;
+    color: #112250;
+    font-family: "Playfair Display", serif;
+    font-size: clamp(55px, 6vw, 85px);
+    line-height: .9;
+    font-weight: 400;
+    letter-spacing: -3px;
+}
+
+.panhala-food-content h2 em {
+    display: block;
+    color: #3C507D;
+    font-style: normal;
+}
+
+.panhala-food-image {
+    position: relative;
+    height: 520px;
+    overflow: hidden;
+}
+
+.panhala-food-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform .8s ease;
+}
+
+.panhala-food-image:hover img {
+    transform: scale(1.03);
+}
+
+.panhala-food-caption {
+    position: absolute;
+    left: 25px;
+    right: 25px;
+    bottom: 25px;
+    padding: 16px 18px;
+    background: rgba(17, 34, 80, .88);
+    color: #E0C58F;
+    font-size: 9px;
+    letter-spacing: 2px;
+    font-weight: 600;
+}
+
+.panhala-food-caption span {
+    display: block;
+    margin-top: 7px;
+    color: #F5F0E9;
+    font-size: 10px;
+    letter-spacing: 0;
+    line-height: 1.6;
+    font-weight: 400;
+}
+
+
+/* ==========================================
+   PANHALA FOOD - MOBILE
+=========================================== */
+
+@media (max-width: 800px) {
+
+    .panhala-food {
+        grid-template-columns: 1fr;
+        gap: 45px;
+        padding: 90px 7vw;
+    }
+
+    .panhala-food-image {
+        height: 450px;
+    }
+
+}
+
+/* =========================
+   DETAIL PAGE NAVBAR FIX
+========================= */
+
+.gateway-navbar {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 100;
+    width: 100%;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    padding: 18px 5vw;
+
+    color: #F5F0E9;
+}
+
+.gateway-navbar .nav-logo {
+    color: #F5F0E9;
+    font-size: 16px;
+    font-weight: 600;
+    letter-spacing: 1px;
+    white-space: nowrap;
+}
+
+.gateway-navbar .nav-links {
+    display: flex;
+    align-items: center;
+    gap: 38px;
+}
+
+.gateway-navbar .nav-links a {
+    position: relative;
+
+    color: rgba(245, 240, 233, 0.85);
+    text-decoration: none;
+
+    font-size: 12px;
+    font-weight: 500;
+    letter-spacing: 1px;
+
+    transition: color 0.3s ease;
+}
+
+.gateway-navbar .nav-links a:hover,
+.gateway-navbar .nav-links a.active {
+    color: #F5F0E9;
+}
+
+.gateway-navbar .nav-links a.active::after {
+    content: "";
+
+    position: absolute;
+    left: 0;
+    bottom: -10px;
+
+    width: 100%;
+    height: 1px;
+
+    background: #E0C58F;
+}
+
+
+/* MOBILE */
+
+@media (max-width: 700px) {
+
+    .gateway-navbar {
+        padding: 18px 6vw;
+    }
+
+    .gateway-navbar .nav-logo {
+        font-size: 14px;
+    }
+
+    .gateway-navbar .nav-links {
+        gap: 18px;
+    }
+
+    .gateway-navbar .nav-links a {
+        font-size: 10px;
+    }
+
+}
+
+/* =====================================================
+   FESTIVAL PAGE
+===================================================== */
+
+.festival-page {
+    background: #F5F0E9;
+    color: #112250;
+}
+
+
+/* =====================================================
+   NAVBAR
+===================================================== */
+
+.festival-navbar {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 100;
+
+    width: 100%;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    padding: 22px 5vw;
+}
+
+.festival-logo {
+    color: #F5F0E9;
+    text-decoration: none;
+
+    font-size: 15px;
+    font-weight: 600;
+    letter-spacing: 1px;
+}
+
+.festival-nav-links {
+    display: flex;
+    align-items: center;
+    gap: 38px;
+}
+
+.festival-nav-links a {
+    position: relative;
+
+    color: rgba(245, 240, 233, 0.85);
+    text-decoration: none;
+
+    font-size: 11px;
+    letter-spacing: 1px;
+
+    transition: color .3s ease;
+}
+
+.festival-nav-links a:hover,
+.festival-nav-links a.active {
+    color: #F5F0E9;
+}
+
+.festival-nav-links a.active::after {
+    content: "";
+
+    position: absolute;
+    left: 0;
+    bottom: -9px;
+
+    width: 100%;
+    height: 1px;
+
+    background: #E0C58F;
+}
+
+
+/* =====================================================
+   HERO
+===================================================== */
+
+.festival-hero {
+    position: relative;
+
+    height: 92vh;
+    min-height: 650px;
+
+    overflow: hidden;
+
+    background: #0D0D0C;
+}
+
+.festival-hero > img {
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+
+    animation: festivalHeroZoom 12s ease-out forwards;
+}
+
+@keyframes festivalHeroZoom {
+
+    from {
+        transform: scale(1.08);
+    }
+
+    to {
+        transform: scale(1);
+    }
+
+}
+
+.festival-hero-overlay {
+    position: absolute;
+    inset: 0;
+
+    background:
+        linear-gradient(
+            90deg,
+            rgba(10, 10, 9, .78) 0%,
+            rgba(10, 10, 9, .42) 50%,
+            rgba(10, 10, 9, .10) 100%
+        );
+}
+
+.festival-hero-content {
+    position: absolute;
+
+    left: 10vw;
+    top: 50%;
+
+    transform: translateY(-42%);
+
+    max-width: 900px;
+
+    color: #F5F0E9;
+}
+
+.festival-eyebrow {
+    margin-bottom: 28px;
+
+    color: #E0C58F;
+
+    font-size: 9px;
+    font-weight: 600;
+    letter-spacing: 3px;
+}
+
+.festival-hero-content h1 {
+    margin: 0;
+
+    font-family: "Playfair Display", serif;
+
+    font-size: clamp(65px, 10vw, 145px);
+    line-height: .84;
+
+    letter-spacing: -5px;
+
+    font-weight: 400;
+}
+
+.festival-hero-content h1 span {
+    display: block;
+
+    color: #E0C58F;
+}
+
+.festival-hero-content > p:last-child {
+    max-width: 390px;
+
+    margin-top: 40px;
+
+    color: rgba(245, 240, 233, .78);
+
+    font-size: 13px;
+    line-height: 1.8;
+}
+
+.festival-location {
+    position: absolute;
+
+    left: 10vw;
+    bottom: 32px;
+
+    color: rgba(245, 240, 233, .7);
+
+    font-size: 8px;
+    letter-spacing: 2.5px;
+}
+
+
+/* =====================================================
+   COMMON FESTIVAL LABEL
+===================================================== */
+
+.festival-label {
+    margin-bottom: 20px;
+
+    color: #3C507D;
+
+    font-size: 8px;
+    font-weight: 600;
+
+    letter-spacing: 2.5px;
+}
+
+
+/* =====================================================
+   JANMASHTAMI INTRO
+===================================================== */
+
+.festival-intro {
+    display: grid;
+
+    grid-template-columns: 1.05fr .95fr;
+
+    gap: 80px;
+
+    align-items: center;
+
+    padding: 120px 10vw;
+}
+
+.festival-intro-image {
+    height: 580px;
+
+    overflow: hidden;
+}
+
+.festival-intro-image img {
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+
+    transition: transform .8s ease;
+}
+
+.festival-intro-image:hover img {
+    transform: scale(1.03);
+}
+
+.festival-intro-content {
+    max-width: 560px;
+}
+
+.festival-intro-content h2 {
+    margin-bottom: 35px;
+
+    font-family: "Playfair Display", serif;
+
+    color: #112250;
+
+    font-size: clamp(52px, 6vw, 82px);
+
+    line-height: .9;
+
+    font-weight: 400;
+
+    letter-spacing: -3px;
+}
+
+.festival-intro-content h2 span,
+.festival-section-title h2 span,
+.dahi-handi-content h2 span,
+.festival-today-content h2 span,
+.festival-gallery-heading h2 span,
+.festival-ending h2 span {
+    display: block;
+
+    color: #3C507D;
+}
+
+.festival-intro-content > p:not(.festival-label) {
+    max-width: 500px;
+
+    margin-bottom: 18px;
+
+    color: #3C507D;
+
+    font-size: 13px;
+    line-height: 1.9;
+}
+
+
+/* =====================================================
+   CELEBRATION HIGHLIGHTS
+===================================================== */
+
+.festival-highlights {
+    padding: 110px 8vw;
+
+    background: #D9CBC2;
+}
+
+.festival-section-title {
+    margin-bottom: 55px;
+}
+
+.festival-section-title h2 {
+    color: #112250;
+
+    font-family: "Playfair Display", serif;
+
+    font-size: clamp(48px, 5vw, 75px);
+
+    line-height: .9;
+
+    font-weight: 400;
+
+    letter-spacing: -2px;
+}
+
+.festival-highlight-grid {
+    display: grid;
+
+    grid-template-columns: repeat(3, 1fr);
+
+    gap: 18px;
+}
+
+.festival-highlight {
+    background: #F5F0E9;
+}
+
+.festival-highlight-image {
+    height: 330px;
+
+    overflow: hidden;
+}
+
+.festival-highlight-image img {
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+
+    transition: transform .7s ease;
+}
+
+.festival-highlight:hover img {
+    transform: scale(1.04);
+}
+
+.festival-highlight h3 {
+    margin: 25px 25px 10px;
+
+    color: #112250;
+
+    font-family: "Playfair Display", serif;
+
+    font-size: 27px;
+
+    font-weight: 400;
+}
+
+.festival-highlight p {
+    margin: 0 25px 28px;
+
+    color: #3C507D;
+
+    font-size: 11px;
+
+    line-height: 1.8;
+}
+
+
+/* =====================================================
+   DAHI HANDI
+===================================================== */
+
+.dahi-handi {
+    display: grid;
+
+    grid-template-columns: .9fr 1.1fr;
+
+    gap: 80px;
+
+    align-items: center;
+
+    padding: 120px 10vw;
+
+    background: #F5F0E9;
+}
+
+.dahi-handi-content {
+    max-width: 560px;
+}
+
+.dahi-handi-content h2 {
+    margin-bottom: 35px;
+
+    color: #112250;
+
+    font-family: "Playfair Display", serif;
+
+    font-size: clamp(52px, 6vw, 82px);
+
+    line-height: .9;
+
+    font-weight: 400;
+
+    letter-spacing: -3px;
+}
+
+.dahi-handi-content > p:not(.festival-label) {
+    margin-bottom: 18px;
+
+    color: #3C507D;
+
+    font-size: 13px;
+
+    line-height: 1.9;
+}
+
+.dahi-handi-image {
+    position: relative;
+
+    height: 620px;
+
+    overflow: hidden;
+}
+
+.dahi-handi-image img {
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+
+    transition: transform .8s ease;
+}
+
+.dahi-handi-image:hover img {
+    transform: scale(1.03);
+}
+
+.dahi-handi-caption {
+    position: absolute;
+
+    left: 25px;
+    right: 25px;
+    bottom: 25px;
+
+    padding: 18px 20px;
+
+    background: rgba(17, 34, 80, .88);
+
+    color: #E0C58F;
+}
+
+.dahi-handi-caption strong {
+    display: block;
+
+    font-size: 9px;
+    letter-spacing: 2px;
+}
+
+.dahi-handi-caption span {
+    display: block;
+
+    margin-top: 6px;
+
+    color: #F5F0E9;
+
+    font-size: 10px;
+}
+
+
+/* =====================================================
+   TODAY
+===================================================== */
+
+.festival-today {
+    display: grid;
+
+    grid-template-columns: .35fr 1fr;
+
+    gap: 50px;
+
+    padding: 120px 10vw;
+
+    background: #112250;
+
+    color: #F5F0E9;
+}
+
+.festival-today-number {
+    color: #E0C58F;
+
+    font-family: "Playfair Display", serif;
+
+    font-size: 90px;
+
+    line-height: 1;
+}
+
+.festival-today-content {
+    max-width: 760px;
+}
+
+.festival-today-content .festival-label {
+    color: #E0C58F;
+}
+
+.festival-today-content h2 {
+    margin-bottom: 35px;
+
+    font-family: "Playfair Display", serif;
+
+    font-size: clamp(50px, 6vw, 82px);
+
+    line-height: .9;
+
+    font-weight: 400;
+
+    letter-spacing: -3px;
+}
+
+.festival-today-content h2 span {
+    color: #E0C58F;
+}
+
+.festival-today-content > p:not(.festival-label) {
+    max-width: 650px;
+
+    margin-bottom: 18px;
+
+    color: rgba(245, 240, 233, .75);
+
+    font-size: 13px;
+
+    line-height: 1.9;
+}
+
+
+/* =====================================================
+   PHOTO STORY
+===================================================== */
+
+.festival-gallery {
+    padding: 120px 8vw;
+
+    background: #D9CBC2;
+}
+
+.festival-gallery-heading {
+    margin-bottom: 55px;
+}
+
+.festival-gallery-heading h2 {
+    color: #112250;
+
+    font-family: "Playfair Display", serif;
+
+    font-size: clamp(50px, 6vw, 82px);
+
+    line-height: .9;
+
+    font-weight: 400;
+
+    letter-spacing: -3px;
+}
+
+.festival-gallery-grid {
+    display: grid;
+
+    grid-template-columns: 1.3fr 1fr 1fr;
+
+    grid-auto-rows: 300px;
+
+    gap: 16px;
+}
+
+.festival-photo {
+    overflow: hidden;
+}
+
+.festival-photo img {
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+
+    transition: transform .8s ease;
+}
+
+.festival-photo:hover img {
+    transform: scale(1.04);
+}
+
+.festival-photo-large {
+    grid-row: span 2;
+}
+
+.festival-photo-wide {
+    grid-column: span 2;
+}
+
+
+/* =====================================================
+   ENDING
+===================================================== */
+
+.festival-ending {
+    padding: 130px 10vw;
+
+    text-align: center;
+
+    background: #F5F0E9;
+}
+
+.festival-ending h2 {
+    max-width: 900px;
+
+    margin: 0 auto 35px;
+
+    color: #112250;
+
+    font-family: "Playfair Display", serif;
+
+    font-size: clamp(50px, 6vw, 85px);
+
+    line-height: .9;
+
+    font-weight: 400;
+
+    letter-spacing: -3px;
+}
+
+.festival-ending > p:last-child {
+    max-width: 600px;
+
+    margin: auto;
+
+    color: #3C507D;
+
+    font-size: 13px;
+
+    line-height: 1.9;
+}
+
+
+/* =====================================================
+   BACK
+===================================================== */
+
+.festival-back {
+    padding: 45px 8vw;
+
+    background: #E0C58F;
+}
+
+.festival-back a {
+    color: #112250;
+
+    text-decoration: none;
+
+    font-size: 11px;
+    font-weight: 600;
+
+    letter-spacing: 1.5px;
+}
+
+
+/* =====================================================
+   FOOTER
+===================================================== */
+
+.festival-footer {
+    display: flex;
+
+    justify-content: space-between;
+
+    padding: 28px 8vw;
+
+    background: #112250;
+
+    color: rgba(245, 240, 233, .7);
+
+    font-size: 8px;
+
+    letter-spacing: 2px;
+}
+
+
+/* =====================================================
+   MOBILE
+===================================================== */
+
+@media (max-width: 800px) {
+
+    .festival-navbar {
+        padding: 18px 6vw;
+    }
+
+    .festival-nav-links {
+        gap: 18px;
+    }
+
+    .festival-nav-links a {
+        font-size: 9px;
+    }
+
+    .festival-hero {
+        min-height: 600px;
+    }
+
+    .festival-hero-content {
+        left: 7vw;
+        right: 7vw;
+    }
+
+    .festival-hero-content h1 {
+        font-size: clamp(55px, 15vw, 95px);
+        letter-spacing: -3px;
+    }
+
+    .festival-intro,
+    .dahi-handi {
+        grid-template-columns: 1fr;
+
+        gap: 45px;
+
+        padding: 90px 7vw;
+    }
+
+    .festival-intro-image {
+        height: 450px;
+        order: 2;
+    }
+
+    .festival-intro-content {
+        order: 1;
+    }
+
+    .festival-highlight-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .festival-highlights,
+    .festival-gallery {
+        padding: 90px 7vw;
+    }
+
+    .festival-highlight-image {
+        height: 400px;
+    }
+
+    .dahi-handi-image {
+        height: 450px;
+    }
+
+    .festival-today {
+        grid-template-columns: 1fr;
+
+        gap: 25px;
+
+        padding: 90px 7vw;
+    }
+
+    .festival-today-number {
+        font-size: 60px;
+    }
+
+    .festival-gallery-grid {
+        grid-template-columns: 1fr;
+
+        grid-auto-rows: 350px;
+    }
+
+    .festival-photo-large,
+    .festival-photo-wide {
+        grid-column: auto;
+        grid-row: auto;
+    }
+
+    .festival-ending {
+        padding: 100px 7vw;
+    }
+
+    .festival-footer {
+        flex-direction: column;
+        gap: 12px;
+    }
+
+}
